@@ -2,7 +2,7 @@ const catchError = require('../utils/catchError');
 const Genre = require('../models/Genre');
 
 const getAll = catchError(async(req, res) => {
-    const results = await Genre.findAll();
+    const results = await Genre.findAll({ order: ['name']});
     return res.json(results);
 });
 
